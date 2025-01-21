@@ -1,7 +1,6 @@
 import os
-import chardet  # Library for encoding detection
+import chardet
 
-# Directory containing TextGrid files
 input_folder = r"C:\Users\julia\Downloads\research\muhsic\mfa_english_input"
 file_type = ".TextGrid"
 
@@ -9,7 +8,6 @@ for filename in os.listdir(input_folder):
     if filename.endswith(file_type):
         file_path = os.path.join(input_folder, filename)
         try:
-            # Detect the file encoding
             with open(file_path, 'rb') as f:
                 raw_data = f.read()
                 result = chardet.detect(raw_data)
